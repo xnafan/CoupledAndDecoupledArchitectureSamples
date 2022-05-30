@@ -1,8 +1,8 @@
 ﻿using BusinessLayer.Bad;
 
+namespace ConsoleGui.Bad;
 public class BadUI
 {
-
     //No way to
     //- change database server from here (not even using configuration)
     //- refer to controller class using contract (interface) 

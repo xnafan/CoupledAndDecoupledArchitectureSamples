@@ -1,6 +1,7 @@
 ﻿using BusinessLayer;
 using BusinessLayer.Better;
 
+namespace ConsoleGui.Better;
 public class BetterUI
 {
 

@@ -12,7 +12,7 @@ namespace DataAccessLayer.Bad
 
             //BAD STUFF:
             //Connectionstring hardcoded into connection class
-            //Result: No way to change DB server without recompile and -deploy 
+            //Result: No way to change DB server without recompile and redeploy 
             
             //GOOD STUFF:
             //...it works...
