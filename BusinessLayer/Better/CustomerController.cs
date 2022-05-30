@@ -1,10 +1,9 @@
 ﻿using DataAccessLayer;
-using DataAccessLayer.Better;
 using Model;
 
 namespace BusinessLayer.Better
 {
-    public class CustomerController
+    public class CustomerController : ICustomerController
     {
         //BETTER DEVELOPER = IMPROVED decoupling :)
 
@@ -13,10 +12,11 @@ namespace BusinessLayer.Better
         //   is moved out of the controller (and can be centralized)
         // - Controller is dependent on contract (Dao interface)
         //   instead of implementation (Dao class)
+        // - Controller is now defined using a contract (interface)
 
         //BAD STUFF:
         // - controller still has responsibility for retrieving Dao
-        // - still hard to test controller without an active DB. 
+        // - still hard to test controller without a DB server. 
 
         private ICustomerDao _customerDao = DaoFactory.GetCustomerDao();
 

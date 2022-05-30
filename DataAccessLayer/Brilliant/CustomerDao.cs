@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer.Brilliant
 {
-    public class CustomerDao
+    public class CustomerDao : ICustomerDao
     {
         private SqlConnection _connection;
 
