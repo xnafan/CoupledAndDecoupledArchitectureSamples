@@ -9,10 +9,13 @@ namespace BusinessLayer.Better
 
         //GOOD STUFF:
         // - Responsibility for construction of the Dao
-        //   is moved out of the controller (and can be centralized)
+        //   is moved out of the controller, into a factory
+        //   (and can thus be centralized)
         // - Controller is dependent on contract (Dao interface)
         //   instead of implementation (Dao class)
         // - Controller is now defined using a contract (interface)
+        //   which means that classes using the Controller can swap it
+        //   for another implementation
 
         //BAD STUFF:
         // - controller still has responsibility for retrieving Dao

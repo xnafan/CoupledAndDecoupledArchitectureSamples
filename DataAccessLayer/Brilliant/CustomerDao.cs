@@ -1,18 +1,27 @@
 ﻿using Model;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DataAccessLayer.Brilliant
 {
     public class CustomerDao : ICustomerDao
     {
-        private SqlConnection _connection;
-
         //TOTAL decoupling = BRILLIANT DEVELOPER!  :-D
-        //- Connectionstring storage mechanism
+
+        //GOOD STUFF:
+        // - Connectionstring storage mechanism
         //  is now up to user of the Dao class
-        public CustomerDao(string connectionString)
+        // - we're depending on a higher level of abstraction:
+        //   IDbConnection instead of SqlConnection/OleDbConnection or similar
+
+        //BAD STUFF:
+        // ...none... ;-)
+
+        private IDbConnection _connection;
+
+        public CustomerDao(IDbConnection connection)
         {
-            _connection = new SqlConnection(connectionString);
+            _connection = connection;
         }
         public bool deleteCustomer(Customer person)
         {
@@ -36,3 +45,4 @@ namespace DataAccessLayer.Brilliant
         }
     }
 }
+

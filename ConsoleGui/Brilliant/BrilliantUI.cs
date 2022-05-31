@@ -4,12 +4,11 @@ public class BrilliantUI : ICustomerVisualizer
 {
     //IMPROVEMENTS:
     //It is possible to
-    // - change database server (using configuration) without recompiling
-    // - refer to controller class using contract (interface) making external controller creation possible
+    // - refer to controller class using contract (interface)
+    //   making external controller creation possible
 
-    // UI layer has responsibility for creation of specific controller.
-    //  - if customer controller constructor changes, this UI class must change too.
-    // UI is still coupled to specific controller class (new CustomerController())
+    //BAD STUFF:
+    // ... none ... ;-)
 
     ICustomerController _customerController;
 

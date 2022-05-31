@@ -7,6 +7,9 @@ namespace BusinessLayer.Bad
     {
         //VERY hard coupling = BAD DEVELOPER!! :(
 
+        //GOOD STUFF:
+        //...it works...
+
         //BAD STUFF:
         // 1) Controller is implementation-dependent (using a Dao CLASS)
         //  instead of contract-dependent (using a Dao INTERFACE).
@@ -15,14 +18,12 @@ namespace BusinessLayer.Bad
         // - no way to test Controller class without DB
 
         // 2) Controller is responsible for Dao creation
+        // ( apparent, because of the "NEW CustomerDao()" )
         // Result:
         // - if Dao constructor changes, controller must change
         // - switching to another Dao implementation
         //    may cause Controller methods to fail,
         //    as the Dao naming isn't enforced.
-
-        //GOOD STUFF:
-        //...it works...
 
         private CustomerDao _customerDao = new CustomerDao();
 
@@ -30,7 +31,6 @@ namespace BusinessLayer.Bad
         {
             return _customerDao.getAllCustomers();
         }
-
         public IEnumerable<Customer> GetPotentialCustomers()
         {
             return _customerDao.getAllCustomers()

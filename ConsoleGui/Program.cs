@@ -6,8 +6,11 @@ using ConsoleGui.Better;
 using ConsoleGui.Brilliant;
 using DataAccessLayer;
 using DataAccessLayer.Brilliant;
+using System.Data.SqlClient;
 
-Configure();
+
+//register classes to their interfaces
+Configure();    
 
 //  Under the surface these UIs are very different,
 //  making them increasingly more configurable
@@ -23,5 +26,5 @@ void Configure()
 {
     SuperSimpleIocContainer.Register<ICustomerVisualizer>(() => new BrilliantUI(SuperSimpleIocContainer.Resolve<ICustomerController>()));
     SuperSimpleIocContainer.Register<ICustomerController>(() => new CustomerController(SuperSimpleIocContainer.Resolve<ICustomerDao>()));
-    SuperSimpleIocContainer.Register<ICustomerDao>(() => new CustomerDao("CONNECTION STRING EXAMPLE"));
+    SuperSimpleIocContainer.Register<ICustomerDao>(() => new CustomerDao(new SqlConnection("CONNECTION STRING")));
 }

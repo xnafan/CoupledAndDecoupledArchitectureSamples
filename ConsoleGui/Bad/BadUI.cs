@@ -3,10 +3,17 @@
 namespace ConsoleGui.Bad;
 public class BadUI
 {
-    //No way to
-    //- change database server from here (not even using configuration)
-    //- refer to controller class using contract (interface) 
-    //  in order to make it easier to switch to another controller implementation
+
+    //VERY hard coupling = BAD DEVELOPER!! :(
+
+    //GOOD STUFF:
+    // ...it works...
+
+    //BAD STUFF:
+    // - Doesn't refer to controller class by contract (interface) 
+    //   which would make it easier to switch to another controller implementation
+    // - the UI instantiates its own controller,
+    //   giving the UI responsibility it shouldn't have
 
     CustomerController customerController = new CustomerController();
 

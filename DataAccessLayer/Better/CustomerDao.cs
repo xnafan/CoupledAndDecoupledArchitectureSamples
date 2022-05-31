@@ -13,7 +13,7 @@ namespace DataAccessLayer.Better
         //GOOD STUFF
         //- Connectionstring is now configurable
         //  and can be edited externally
-        //  without recompile and -deploy
+        //  without recompile or redeploy
 
         //BAD STUFF
         //- Code that is responsible for Dao class construction

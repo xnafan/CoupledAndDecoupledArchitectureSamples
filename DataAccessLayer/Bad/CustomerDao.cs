@@ -10,12 +10,13 @@ namespace DataAccessLayer.Bad
         {
             //VERY hard coupling = BAD DEVELOPER! :(
 
+            //GOOD STUFF:
+            //...it works...
+            
             //BAD STUFF:
             //Connectionstring hardcoded into connection class
             //Result: No way to change DB server without recompile and redeploy 
             
-            //GOOD STUFF:
-            //...it works...
             _connection = new SqlConnection("[ sample connection string ]");
         }
         public bool deleteCustomer(Customer person)

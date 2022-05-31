@@ -4,15 +4,20 @@ using BusinessLayer.Better;
 namespace ConsoleGui.Better;
 public class BetterUI
 {
+    //BETTER DEVELOPER = IMPROVED decoupling :)
 
-    //IMPROVEMENTS:
+    //GOOD STUFF:
     //It is possible to
-    // - change database server (using configuration) without recompiling
-    // - refer to controller class using contract (interface) making external controller creation possible
+    // - refer to controller using a contract (interface)
+    //   making it possible to instantiate another controller, if needed,
+    //   by changing the "NEW [controller]()" to another ICustomerController implementation
 
-    // UI layer has responsibility for creation of specific controller.
+    //BAD STUFF:
+    // UI layer has responsibility for creation of a specific controller.
     //  - if customer controller constructor changes, this UI class must change too.
     // UI is still coupled to specific controller class (new CustomerController())
+    // even though it is referenced using an interface.
+  
 
     ICustomerController customerController = new CustomerController();
 
