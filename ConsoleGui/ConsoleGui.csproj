@@ -11,4 +11,10 @@
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Bad\" />
+    <Folder Include="Better\" />
+    <Folder Include="Brilliant\" />
+  </ItemGroup>
+
 </Project>

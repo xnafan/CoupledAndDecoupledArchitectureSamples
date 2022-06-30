@@ -11,4 +11,10 @@
     <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Bad\" />
+    <Folder Include="Better\" />
+    <Folder Include="Brilliant\" />
+  </ItemGroup>
+
 </Project>

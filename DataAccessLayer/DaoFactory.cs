@@ -1,14 +1,13 @@
 ﻿using DataAccessLayer;
-using DataAccessLayer.Better;
 using Microsoft.Extensions.Configuration;
 
-namespace BusinessLayer.Better
+namespace BusinessLayer
 {
     public class DaoFactory
     {
         public static ICustomerDao GetCustomerDao() 
         {
-            return new CustomerDao(GetConfiguration());
+            return new BetterCustomerDao(GetConfiguration());
         }
         private static IConfiguration GetConfiguration()
         {

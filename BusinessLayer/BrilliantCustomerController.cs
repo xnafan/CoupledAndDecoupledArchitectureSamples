@@ -1,9 +1,9 @@
 ﻿using DataAccessLayer;
 using Model;
 
-namespace BusinessLayer.Brilliant
+namespace BusinessLayer
 {
-    public class CustomerController : ICustomerController
+    public class BrilliantCustomerController : ICustomerController
     {
         //BRILLIANT DEVELOPER = TOTAL decoupling :)
 
@@ -20,7 +20,7 @@ namespace BusinessLayer.Brilliant
 
         private ICustomerDao _customerDao;
 
-        public CustomerController(ICustomerDao customerDao)
+        public BrilliantCustomerController(ICustomerDao customerDao)
         {
             _customerDao = customerDao;
         }

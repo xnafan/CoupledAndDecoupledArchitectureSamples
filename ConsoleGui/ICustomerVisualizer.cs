@@ -1,4 +1,4 @@
-﻿namespace ConsoleGui.Brilliant
+﻿namespace ConsoleGui
 {
     public interface ICustomerVisualizer
     {

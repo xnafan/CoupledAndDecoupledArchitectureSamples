@@ -2,9 +2,9 @@
 using Model;
 using System.Data.SqlClient;
 
-namespace DataAccessLayer.Better
+namespace DataAccessLayer
 {
-    public class CustomerDao : ICustomerDao
+    public class BetterCustomerDao : ICustomerDao
     {
         private SqlConnection _connection;
         
@@ -19,7 +19,7 @@ namespace DataAccessLayer.Better
         //- Code that is responsible for Dao class construction
         //  has to support the IConfiguration interface
         //  (extra complexity in tests)
-        public CustomerDao(IConfiguration configuration)
+        public BetterCustomerDao(IConfiguration configuration)
         {
             string connectionString = configuration.GetConnectionString("BankingConnectionString");
             _connection = new SqlConnection(connectionString);

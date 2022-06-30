@@ -1,11 +1,6 @@
 ﻿using BusinessLayer;
-using BusinessLayer.Brilliant;
 using ConsoleGui;
-using ConsoleGui.Bad;
-using ConsoleGui.Better;
-using ConsoleGui.Brilliant;
 using DataAccessLayer;
-using DataAccessLayer.Brilliant;
 using System.Data.SqlClient;
 
 
@@ -25,6 +20,6 @@ SuperSimpleIocContainer.Resolve<ICustomerVisualizer>().ShowCustomers();
 void Configure()
 {
     SuperSimpleIocContainer.Register<ICustomerVisualizer>(() => new BrilliantUI(SuperSimpleIocContainer.Resolve<ICustomerController>()));
-    SuperSimpleIocContainer.Register<ICustomerController>(() => new CustomerController(SuperSimpleIocContainer.Resolve<ICustomerDao>()));
-    SuperSimpleIocContainer.Register<ICustomerDao>(() => new CustomerDao(new SqlConnection("CONNECTION STRING")));
+    SuperSimpleIocContainer.Register<ICustomerController>(() => new BrilliantCustomerController(SuperSimpleIocContainer.Resolve<ICustomerDao>()));
+    SuperSimpleIocContainer.Register<ICustomerDao>(() => new BrilliantCustomerDao(new SqlConnection("CONNECTION STRING")));
 }

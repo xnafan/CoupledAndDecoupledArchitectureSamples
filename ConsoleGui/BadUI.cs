@@ -1,6 +1,6 @@
-﻿using BusinessLayer.Bad;
+﻿using BusinessLayer;
 
-namespace ConsoleGui.Bad;
+namespace ConsoleGui;
 public class BadUI
 {
 
@@ -15,7 +15,7 @@ public class BadUI
     // - the UI instantiates its own controller,
     //   giving the UI responsibility it shouldn't have
 
-    CustomerController customerController = new CustomerController();
+    BadCustomerController customerController = new BadCustomerController();
 
     public void ShowCustomers()
     { 

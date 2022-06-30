@@ -1,23 +1,27 @@
 ﻿using Model;
+using System.Data;
 using System.Data.SqlClient;
 
-namespace DataAccessLayer.Bad
+namespace DataAccessLayer
 {
-    public class CustomerDao
+    public class BrilliantCustomerDao : ICustomerDao
     {
-        private SqlConnection _connection;
-        public CustomerDao()
-        {
-            //VERY hard coupling = BAD DEVELOPER! :(
+        //TOTAL decoupling = BRILLIANT DEVELOPER!  :-D
 
-            //GOOD STUFF:
-            //...it works...
-            
-            //BAD STUFF:
-            //Connectionstring hardcoded into connection class
-            //Result: No way to change DB server without recompile and redeploy 
-            
-            _connection = new SqlConnection("[ sample connection string ]");
+        //GOOD STUFF:
+        // - Connectionstring storage mechanism
+        //  is now up to user of the Dao class
+        // - we're depending on a higher level of abstraction:
+        //   IDbConnection instead of SqlConnection/OleDbConnection or similar
+
+        //BAD STUFF:
+        // ...none... ;-)
+
+        private IDbConnection _connection;
+
+        public BrilliantCustomerDao(IDbConnection connection)
+        {
+            _connection = connection;
         }
         public bool deleteCustomer(Customer person)
         {
@@ -41,3 +45,4 @@ namespace DataAccessLayer.Bad
         }
     }
 }
+

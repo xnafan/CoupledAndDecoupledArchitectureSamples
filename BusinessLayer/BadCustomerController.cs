@@ -1,9 +1,9 @@
-﻿using DataAccessLayer.Bad;
+﻿using DataAccessLayer;
 using Model;
 
-namespace BusinessLayer.Bad
+namespace BusinessLayer
 {
-    public class CustomerController
+    public class BadCustomerController
     {
         //VERY hard coupling = BAD DEVELOPER!! :(
 
@@ -25,7 +25,7 @@ namespace BusinessLayer.Bad
         //    may cause Controller methods to fail,
         //    as the Dao naming isn't enforced.
 
-        private CustomerDao _customerDao = new CustomerDao();
+        private BadCustomerDao _customerDao = new BadCustomerDao();
 
         public IEnumerable<Customer> GetAllCustomers()
         {

@@ -1,9 +1,9 @@
 ﻿using DataAccessLayer;
 using Model;
 
-namespace BusinessLayer.Better
+namespace BusinessLayer
 {
-    public class CustomerController : ICustomerController
+    public class BetterCustomerController : ICustomerController
     {
         //BETTER DEVELOPER = IMPROVED decoupling :)
 

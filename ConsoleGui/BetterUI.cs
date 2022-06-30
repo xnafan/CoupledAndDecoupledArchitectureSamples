@@ -1,7 +1,6 @@
 ﻿using BusinessLayer;
-using BusinessLayer.Better;
 
-namespace ConsoleGui.Better;
+namespace ConsoleGui;
 public class BetterUI
 {
     //BETTER DEVELOPER = IMPROVED decoupling :)
@@ -19,7 +18,7 @@ public class BetterUI
     // even though it is referenced using an interface.
   
 
-    ICustomerController customerController = new CustomerController();
+    ICustomerController customerController = new BetterCustomerController();
 
     public void ShowCustomers()
     {

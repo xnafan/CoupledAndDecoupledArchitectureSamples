@@ -1,5 +1,5 @@
 ﻿using BusinessLayer;
-namespace ConsoleGui.Brilliant;
+namespace ConsoleGui;
 public class BrilliantUI : ICustomerVisualizer
 {
     //IMPROVEMENTS:
