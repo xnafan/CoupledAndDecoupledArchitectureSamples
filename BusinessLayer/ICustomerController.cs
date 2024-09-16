@@ -1,10 +1,8 @@
 ﻿using Model;
 
-namespace BusinessLayer
+namespace BusinessLayer;
+public interface ICustomerController
 {
-    public interface ICustomerController
-    {
-        IEnumerable<Customer> GetAllCustomers();
-        IEnumerable<Customer> GetPotentialCustomers();
-    }
+    IEnumerable<Customer> GetAllCustomers();
+    IEnumerable<Customer> GetPotentialCustomers();
 }

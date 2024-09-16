@@ -1,13 +1,12 @@
 ﻿using Model;
 
-namespace DataAccessLayer
+namespace DataAccessLayer;
+
+public interface ICustomerDao
 {
-    public interface ICustomerDao
-    {
-        IEnumerable<Customer> getAllCustomers();
-        Customer? getCustomer(string email);
-        bool deleteCustomer(Customer customer);
-        bool updateCustomer(Customer customer);
-        void saveCustomer(Customer customer);
-    }
+    Customer? Get(string email);
+    IEnumerable<Customer> GetAll();
+    int Insert(Customer customer);
+    bool Update(Customer customer);
+    bool Delete(Customer customer);
 }

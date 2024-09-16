@@ -24,5 +24,7 @@ public class BadUI
 
         Console.WriteLine("Potential customers");
         customerController.GetPotentialCustomers().ToList().ForEach(Console.WriteLine);
+
+        //Add metode kaldet på implementationen, ikke interfacet...
     }
 }

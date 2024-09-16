@@ -1,7 +1,5 @@
-﻿namespace ConsoleGui
+﻿namespace ConsoleGui;
+public interface ICustomerVisualizer
 {
-    public interface ICustomerVisualizer
-    {
-        void ShowCustomers();
-    }
+    void ShowCustomers();
 }

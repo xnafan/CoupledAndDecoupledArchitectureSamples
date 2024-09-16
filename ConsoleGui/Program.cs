@@ -19,7 +19,7 @@ SuperSimpleIocContainer.Resolve<ICustomerVisualizer>().ShowCustomers();
 
 void Configure()
 {
-    SuperSimpleIocContainer.Register<ICustomerVisualizer>(() => new BrilliantUI(SuperSimpleIocContainer.Resolve<ICustomerController>()));
-    SuperSimpleIocContainer.Register<ICustomerController>(() => new BrilliantCustomerController(SuperSimpleIocContainer.Resolve<ICustomerDao>()));
     SuperSimpleIocContainer.Register<ICustomerDao>(() => new BrilliantCustomerDao(new SqlConnection("CONNECTION STRING")));
+    SuperSimpleIocContainer.Register<ICustomerController>(() => new BrilliantCustomerController(SuperSimpleIocContainer.Resolve<ICustomerDao>()));
+    SuperSimpleIocContainer.Register<ICustomerVisualizer>(() => new BrilliantUI(SuperSimpleIocContainer.Resolve<ICustomerController>()));
 }
